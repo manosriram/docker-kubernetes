@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test1-depl
+  labels:
+    app: test1-depl
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 5000
+      protocol: TCP
+      targetPort: 5050
+  selector:
+      app: test1-depl
+  sessionAffinity: None

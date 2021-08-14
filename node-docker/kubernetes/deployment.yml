@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test1-depl
+  labels:
+    app: test1-depl
+spec:
+  selector:
+    matchLabels:
+      app: test1-depl
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: test1-depl
+    spec:
+      containers:
+        - name: test-kube
+          image: manosriram/test1
